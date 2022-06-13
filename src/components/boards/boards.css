@@ -55,3 +55,12 @@
 .close:hover{
     background-color:var(--tertiary-color);
 }
+
+
+
+@media screen and (max-width:700px){
+    .boards{
+        flex-direction: column;
+    }
+    
+}

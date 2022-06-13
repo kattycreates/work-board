@@ -13,17 +13,21 @@ const Boards = ({showArchive,tasks,setTasks}) => {
   console.log('tasks',tasks);
   const handleSubmit=(e)=>{
     e.preventDefault();
-    let newTask={
-      title,desc,archived:false,
-      id:Math.random()*999,
-      inProgress:false,
-      completed:false,
-      newTask:true
-    };
-    setTasks([...tasks,newTask])
-    setTitle('');
-    setDesc('');
+    if(title&&desc){
+      let newTask={
+        title,desc,archived:false,
+        id:Math.random()*999,
+        inProgress:false,
+        completed:false,
+        newTask:true
+      };
+      setTasks([...tasks,newTask])
+      setTitle('');
+      setDesc('');
+      
+    }
     setShow(false);
+   
 
   }
   //console.log('show',show);
