@@ -1,0 +1,8 @@
+.addTask{
+    z-index: 800;
+    padding: 10px;
+    border: none;
+}
+.addTask:hover{
+    background-color:rgb(78, 208, 255);
+}

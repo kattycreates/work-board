@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
-
+import Header from './components/header/Header';
+import Boards from './components/boards/Boards';
+import data from './database/data';
 function App() {
+  const allData=data;
+  const [tasks,setTasks]=useState(allData);
+  const [showArchive,setShowArchive]=useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header showArchive={showArchive} setShowArchive={setShowArchive} tasks={tasks} setTasks={setTasks}/>
+      <Boards showArchive={showArchive} tasks={tasks} setTasks={setTasks}/>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.tasks{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+   align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    z-index: 900;
+    
+}
+.tasks::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .tasks {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

@@ -1,0 +1,35 @@
+.task{
+    width: 8em;
+    margin: 10px 0 10px 25px;
+    height: 8em;
+    padding: 10px;
+    box-shadow: 5px 5px 7px rgb(26, 43, 26);
+    
+
+}
+.task p{
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    text-align: center;
+}
+.task:nth-child(even){
+   
+    background-color: var(--even-notes);
+}
+.task:nth-child(odd){
+   
+    background-color: var(--odd-notes);
+}
+.task:nth-child(4n){
+   
+    background-color: rgb(255, 170, 170);
+}
+
+.task:nth-child(5n){
+   
+    background-color: rgb(255, 170, 254);
+}
+.task:nth-child(7n){
+   
+    background-color: rgb(147, 255, 133);
+}
