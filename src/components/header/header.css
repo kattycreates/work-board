@@ -66,5 +66,7 @@
     .search-wrapper{
         width: 80%;
     }
-    
+    .header{
+        height: 120px;
+    }
 }

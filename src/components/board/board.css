@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items:center ;
-    margin: 10px;
+    margin: 10px 5px;
     background-color: var(--primary-color);
     height: calc(100vh - 70px);
     overflow: hidden;

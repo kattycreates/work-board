@@ -60,7 +60,15 @@
 
 @media screen and (max-width:700px){
     .boards{
-        flex-direction: column;
+        display: block;
+    }
+    .task-input{
+        width: 250px;
+        height: 250px;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%,-50%);
+        z-index: 999;
     }
     
 }
