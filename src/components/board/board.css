@@ -19,6 +19,7 @@
     margin: 0;
     font-size: 30px;
     padding: 10px;
+    z-index: 900;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 
