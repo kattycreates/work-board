@@ -43,6 +43,14 @@ const Boards = ({showArchive,tasks,setTasks}) => {
    
 
   }
+  const handleClose=(e)=>{
+    e.preventDefault();
+    setShow(false);
+    setEdit(false);
+    setTitle('');
+    setDesc('');
+
+  }
   
   //console.log('show',show);
   return (
@@ -56,13 +64,13 @@ const Boards = ({showArchive,tasks,setTasks}) => {
           <input type='text' className='input' placeholder='Enter title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
           <textarea placeholder='Type here' className='textarea' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
           <button type='submit' className='btn' >Add task</button>
-          <button className='close' onClick={()=>setShow(false)}>Close</button>
+          <button className='close' onClick={handleClose}>Close</button>
         </form>}
         {edit&&<form className='task-input' onSubmit={handleSubmit}>
           <input type='text' className='input' placeholder='Enter title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
           <textarea placeholder='Type here' className='textarea' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
           <button type='submit' className='btn' >Update</button>
-          <button className='close' onClick={()=>setEdit(false)}>Close</button>
+          <button className='close' onClick={handleClose}>Close</button>
         </form>}
        
         
