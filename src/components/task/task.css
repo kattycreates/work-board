@@ -4,8 +4,12 @@
     height: 8em;
     padding: 10px;
     box-shadow: 5px 5px 7px rgb(26, 43, 26);
-    
+    overflow: scroll;
 
+
+}
+.task::-webkit-scrollbar{
+    display: none;
 }
 .task p{
     font-family: 'Caveat', cursive;
