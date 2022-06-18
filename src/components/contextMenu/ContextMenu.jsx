@@ -2,7 +2,7 @@ import React from 'react'
 import './contextMenu.css'
 import useContextMenu from '../../hooks/useContextMenu'
 import { sendToDone,sendToProgress,sendToTasks} from '../utilities/utils'
-const ContextMenu = ({boardId,parent,taskId,tasks,setTasks}) => {
+const ContextMenu = ({boardId,parent,task,tasks,setTasks,setEdit,setTitle,setDesc,setId}) => {
     console.log('tasksnew',tasks)
     const {position,show}=useContextMenu(parent);
     const menuStyle={
@@ -33,6 +33,13 @@ const ContextMenu = ({boardId,parent,taskId,tasks,setTasks}) => {
         let modifiedTasks= tasks.map(t=>t.id===taskId?{...t,archived:true}:t);
         setTasks(modifiedTasks);
     }
+    const handleEdit=(task)=>{
+        setEdit(true);
+        setTitle(task.title);
+        setDesc(task.desc);
+        setId(task.id);
+        
+    }
     
   return (
     show?
@@ -41,11 +48,12 @@ const ContextMenu = ({boardId,parent,taskId,tasks,setTasks}) => {
             <li className='send'>
                 <button className='menu-btn send-btn'>Send to</button>
                 <div className='drop-down'>
-                    {options.map((obj,i)=><button className='menu-btn sub-menu' onClick={(event)=>{event.preventDefault();handleClick(obj,taskId,tasks)}} key={i}>{obj.panel}</button>)}
+                    {options.map((obj,i)=><button className='menu-btn sub-menu' onClick={(event)=>{event.preventDefault();handleClick(obj,task.id,tasks)}} key={i}>{obj.panel}</button>)}
                 </div>
             </li>
-            <li><button className='menu-btn' onClick={(event)=>{event.preventDefault();handleDelete(taskId,tasks)}}>Delete</button></li>
-            <li><button className='menu-btn' onClick={(event)=>{event.preventDefault();handleArchive(taskId,tasks)}}>Archive</button></li>
+            <li><button className='menu-btn' onClick={(event)=>{event.preventDefault();handleEdit(task)}}>Edit</button></li>
+            <li><button className='menu-btn' onClick={(event)=>{event.preventDefault();handleDelete(task.id,tasks)}}>Delete</button></li>
+            <li><button className='menu-btn' onClick={(event)=>{event.preventDefault();handleArchive(task.id,tasks)}}>Archive</button></li>
         </ul>
         
     </div>):(<></>)
