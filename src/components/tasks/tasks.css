@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     overflow: scroll;
     z-index: 900;
+    background-color: var(--primary-color);
     
 }
 .tasks::-webkit-scrollbar {
